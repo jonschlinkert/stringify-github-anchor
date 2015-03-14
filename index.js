@@ -23,16 +23,8 @@ function github(params) {
   if (typeof params.repo !== 'string') {
     throw new TypeError('stringify-github-anchor expects `repo` to be a string.');
   }
-  // params.user = params.user || '';
-  // params.repo = params.repo || '';
-  // params.file = params.file || '';
-  // params.line = params.line || '';
+
   params.branch = params.branch || 'master';
-
-  // var segs = str.split(/[\\\/]/);
-  // var repo = segs.slice(0, 2).join('/');
-  // var rest = segs.slice(2).join('/');
-
   var res = url(params.user, params.repo);
   res += '/blob/';
   res += params.branch;
